@@ -1,0 +1,213 @@
+﻿<!--Line 30(p class=note) features এবং reference এর উপযুক্ত বাংলা করতে পারিনি-->
+<!--Cheatsheet এর বাংলা কি হতে পারে-->
+<!--or even cycle through the...-এই বাক্যটি বাংলা করতে পারছি না-->
+<!-- তালিকা অনুচ্ছেদেঃ Lego মানে কি  -->
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>এটা আমার ওয়েব: অধ্যায় ৩</title>
+  <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Alfa+Slab+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css">  
+  <link rel="stylesheet" href="prism/prism.css">
+</head>
+<body>
+
+<hgroup>
+  <h1>প্রাথমিক HTML</h1>
+  <h2>এটা আমার ওয়েব! অধ্যায় ৩</h2>
+</hgroup>
+
+<nav>
+  <p>আগেরঃ<br><a href="lesson2.html">শুরু করা</a></p>
+  <p><a href="index.html">প্রধান index</a></p>
+  <p>পরেরঃ<br><a href="lesson4.html">আরও HTML</a></p>
+</nav>
+
+  <main>
+
+  <p>এই সপ্তাহে আমরা <acronym title="Hypertext Markup Language">HTML</acronym> সম্পর্কে জানা শুরু করবো, এই ভাষা ওয়েবে কন্টেন্ট এর গঠনে ব্যবহৃত হয়, এবং সেগুলো অর্থবহ করে (এটা দ্বারা আমরা বুঝি "এটা কি একটা অনুচ্ছেদ?", "এটা কি একটা ইমেজ?", ইত্যাদি)। শুরু করার জন্য, আমরা কিছু মৌলিক বিষয় দেখবো এবং কিছু ভিন্ন ভিন্ন উদাহরণ তৈরি করবো। তারপর আমরা আমাদের প্রকল্পে যাব, এবং তারপর কিছু নতুন কন্টেন্ট।</p>
+
+  <p>শুরু করার আগে, একটা নতুন <a href="https://thimble.webmaker.org/bn-BD">মোজিলা থিম্বল</a> পেজ খোল; আমরা আমাদের নিচের কিছু কাজে এটা ব্যাবহার করবো।</p>
+
+  <p class="note">তুমি ব্যবহার করতে ইচ্ছুক HTML-এর কিছু খুবই সাধারন features এর উপযোগী রেফারেন্স পেতে পারোঃ <a href="https://mozteach.makes.org/bn-BD/thimble/html-cheatsheet">HTML Cheatsheet</a> দেখ।</p>
+
+  <h2>HTML দেখতে কেমন?</h2>
+
+  <p>HTML হচ্ছে ট্যাগ(tags)-এর সমষ্টি, যা কিছু কন্টেন্টকে বেষ্টিত করে যেগুলোতে তুমি কিছু করতে চাও। এই নিয়মটা তোমাদের ইতিপূর্বে ব্যাবহার করা প্রোগ্রামের মতই, যেমন  Microsoft Word, বা  Apple Pages. যখন তুমি কিছু লেখাকে নির্বাচিত করে bold বাটন চাপ তখন তা বোল্ড হয়ে যায়, তুমি আসলে যা করছ তা হল বোল্ড ট্যাগ দিয়ে এই লেখাগুলোকে  tagging করছ ... কিন্তু ঐ প্রোগ্রাম গুলোতে কোড দেখা যায় না ; সবকিছুই ব্যাকগ্রাউন্ডে ঘটে।</p>
+
+  <p class="note">HTML এর  <em>tagging</em> এর উপযুক্ত নাম <em>marking up</em>. তুমি এখন যে কন্টেন্টগুলো পড়ছ তার সবটাই HTML-এ  marked up.</p>
+
+  <p>চল একটা সহজ, সাধারন HTML উদাহরণ দেখিঃ</p>
+
+  <pre><code class="language-markup">&lt;p&gt;A simple paragraph of text.&lt;/p&gt;</code></pre>
+
+  <ul>
+    <li>&lt; এর পর ট্যাগের নাম এবং তারপর  &gt; এটাকে বলে  <em>opening tag(ট্যাগের শুরু)</em>.</li>
+    <li>&lt; এর পর forward slash (/) তারপর ট্যাগের নাম এবং সবশেষে  &gt; এটাকে বলে  <em>closing tag(ট্যাগের শেষ)</em>।</li>
+    <li>Opening tag(ট্যাগের শুরু) এবং Closing tag(ট্যাগের শেষ)-এর মাঝে যা কিছু তাই এই ট্যাগের কন্টেন্ট।</li>
+    <li>এবং সমস্তটাকে একসাথে বলে ইলিমেন্ট(element).</li>
+  </ul>
+
+  <p>এখন এই  <em>paragraph element</em> টিকে তোমার থিম্বল পেজে প্রবেশ করানোর চেষ্টা করঃ opening and closing <code>&lt;body&gt; ... &lt;/body&gt;</code> এর ভেতরে যেকোনো জায়গায় কাজ করবে।</p>
+
+  <p>পরবর্তী পর্যায়ে যাওয়ার আগে, 'attributes' সম্পর্কে বলা যাক। যাকে বাংলায় বৈশিষ্ট্য বলা চলে।  Attributes কিছু বাড়তি তথ্য যা তুমি কোন HTML element-এ যোগ করতে পারো element এর কন্টেন্ট এর মধ্যে কিছু বৈশিষ্ট্য আনার জন্য। 
+উদাহরণস্বরূপঃ</p>
+
+  <pre><code class="language-markup">&lt;p style="color: blue;"&gt;A simple paragraph of text.&lt;/p&gt;</code></pre>
+
+  <p>এখানে আমরা আমাদের <code>p</code> element-এ  <code>style</code> attribute যুক্ত করছি। যার ভেতরে, আমরা CSS ব্যাবহার করে স্টাইল করতে পারি যা শুধু এই element এর জন্যই কাজ করবে। এইক্ষেত্রে,আমরা শুধু লেখার রঙ নীল করেছি। অনেকগুলো ভিন্ন ভিন্ন attributes আর CSS স্টাইল রয়েছে যা তুমি ব্যাবহার করতে পারবে,কিন্তু এনিয়ে আমরা আপাতত কথা বলবোনা।</p>
+
+  <h2>একটা HTML ডকুমেন্ট দেখতে কেমন?</h2>
+
+  <p>একটা HTML ডকুমেন্ট সাধারণত দুইভাগে বিভক্ত হয়ঃ <em>head</em> এবং <em>body</em>. কিছু বেতিক্রম বিষয় আছে , কিন্তু এটাই বুঝার সহজ উপায়। চল সব আলাদা অংশগুলো একনজর দেখা যাকঃ</p>
+
+  <pre><code class="language-markup"><span class="highlight1" data-label="This is the doctype" tabindex="0">&lt;!DOCTYPE HTML&gt;</span>
+<span class="highlight2" data-label="This is the HTML element opening tag" tabindex="0">&lt;html lang="en-US"&gt;</span>
+<span class="highlight3" data-label="This is the HEAD element opening tag" tabindex="0">&lt;head&gt;</span>
+<span class="highlight3" data-label="This is a character set meta tag" tabindex="0">  &lt;meta charset="UTF-8"&gt;</span>
+<span class="highlight3" data-label="This is the TITLE element" tabindex="0">  &lt;title&gt;It's my Web: Lesson 4&lt;/title&gt;</span>
+<span class="highlight3" data-label="This is a LINK element" tabindex="0">  &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;</span> 
+<span class="highlight3" data-label="This is the HEAD element closing tag" tabindex="0">&lt;/head&gt;</span>
+<span class="highlight4" data-label="This is the BODY element opening tag" tabindex="0">&lt;body&gt;</span>
+<span class="highlight4" data-label="This is a level 1 HEADING element" tabindex="0">  &lt;h1&gt;This is my web page.&lt;/h1&gt;</span>
+<span class="highlight4" data-label="This is the BODY element closing tag" tabindex="0">&lt;/body&gt;</span>
+<span class="highlight2" data-label="This is the HTML element closing tag" tabindex="0">&lt;/html&gt;</span></code></pre>
+  
+  <p class="note">এই উদাহরনে তুমি বিভিন্ন লাইনের উপর মাউজ কার্সর রেখে এগুলো সম্পর্কে বিস্তারিত ধারনা পেতে পারো,  or even cycle through the different line descriptions by pressing the tab key (or whatever other keyboard controls your browser has for cycling through focusable elements).</p>
+
+  <ol>
+    <li><span class="highlight1">The doctype</span> এইটা কোন element না, (সাধারনভাবে, একে বলে <em>processing instruction</em>.) এটা মুলত কিছু নিয়ম নির্দেশ করে যেভাবে ডকুমেন্টটিতে HTML লেখা হবে। তুমি আসলে এটি সম্পর্কে কিছু জানার প্রয়োজন নেই, অন্তত এই মুহূর্তে। এটা সবসময়ই HTML ডকুমেন্টের শুরুতে বসে।</li>
+    <li><span class="highlight2">The <code>html</code> element</span> সম্পূর্ণ HTML ডকুমেন্টকে বেষ্টিত করে, শুধুমাত্র doctype এর বাইরে থাকে। তুমি সবসময়ই এই ২য় টা HTML পেজে ব্যাবহার করতে হবে। এটাকে কখনো কখনো পেজের মুল উপাদানও(root element) বলা হয়।</li>
+    <li><span class="highlight3">The head of the document</span> <code>head</code> element দ্বারা বেষ্টিত থাকে। এটা সেইসকল তথ্য ধারন করে যা তোমার ডকুমেন্টকে বর্ণনা করে, এবং এতে উপকারী কিছু কাজ করে, কিন্তু এই অংশটা পেজে আসলে দেখা যায় না। এখানে আমরা পেলামঃ
+      <ul>
+        <li>একটা <code>meta</code> element, যা বলে, এই ডকুমেন্টে কোন কোন বর্ণ, সংখ্যা আর অন্যান্য চিহ্ন ব্যাবহার করা যাবে। utf-8 সাধারণভাবে বুজায় "বিশ্বে ব্যবহৃত সকল চিহ্ন।" এটা ব্যবহার না করার কোন কারন নেই।</li>
+        <li>একটা <code>title</code> element, যা পেজ লোড হওয়ার পর ওয়েব ব্রাউজারের ট্যাবে যে লেখা দেখা যাবে তা নিয়ন্ত্রন করে (আবার তুমি যখন সাইটটা বুকমার্ক করবে তখন তা এই নামেই হবে।) তোমার ইচ্ছামতো এটা পরিবর্তন করতে পারো।</li>
+        <li>একটা <code>link</code> element, যেটা একটা CSS ফাইল নির্দেশ করে। এটা HTML গুলো কিভাবে দেখা যাবে সেইজন্য CSS স্টাইল দেওয়ার একটা উপায় মাত্র (আমরা ইতিপূর্বে আরেকটা উপায় দেখেছিলাম, তুমি কি মনে করতে পারো ওটা কেমন ছিল?)</li>
+      </ul>
+    </li>
+    <li><span class="highlight4">The body of the document</span> <code>body</code> element দ্বারা বেষ্টিত; এখানেই তোমার ওয়েবপেজের সব কন্টেন্ট থাকবে - যা তুমি ওয়েব ব্রাউজারে দেখাতে চাও। এই মুহূর্তে আমি সেখানে শুধু একটা লেভেল ১ হেডিং দিয়েছি, উদাহরণ হিসেবে।</li>
+  </ol>
+
+  <p class="note">তুমি নিশ্চয়ই খেয়াল করেছো এখানে কিছু element আছে যেগুলোতে শুধু একটা একক ট্যাগ বিদ্যমান, এখানে কোন opening আর closing ট্যাগ নেই। এইগুলোকে বলে <em>empty elements(খালি ইলিমেন্ট)</em>, কারন সেগুলো কোন কন্টেন্ট ধারন করে না।</p>
+
+    <h2>ব্যবহারিক প্রয়োগ</h2>
+
+    <p>এখন আমরা দেখেছি কিভাবে HTML কাজ করে, চল ব্যবহারিক প্রয়োগ করা যাক এবং নিজেই লেখা শুরু করা যাক! এই খণ্ডে কোড গুলো তুমি একটা নতুন <a href="https://thimble.webmaker.org/bn-BD">থিম্বল</a> পেজে পরীক্ষা করতে পারবে, বা নির্দ্বিধায় তোমার প্রকল্পে কিছু প্রয়োগ করতে পারো।</p>
+
+    <h3>আমাদের পেজে একটা টাইটেল(title) যুক্ত করা</h3>
+
+    <p>তুমি যদি করে না থাকো, তবে তোমার পেজে একটা টাইটেল (title) যুক্ত করঃ <code>&lt;title&gt;</code> এবং <code>&lt;/title&gt;</code> ট্যাগের মাঝে তোমার ইচ্ছামতো কিছু লেখো।</p>
+
+    <h3>শিরোনাম এবং অনুচ্ছেদ</h3>
+
+    <p>শিরোনাম এবং অনুচ্ছেদ ওয়েব কন্টেন্টের অনেককিছুই ঘটন করে। যেমনটা তুমি মাইক্রোসফট ওয়ার্ডে অথবা অন্য কোন ওয়ার্ডে করতে, তুমি একটা একক উচ্চ পর্যায়ের শিরোনামযুক্ত ডকুমেন্ট তৈরি কর। তারপর উপবিভাগগুলো তৈরি কর ২য় মাত্রার শিরোনাম দিয়ে, তারপর উপ-উপবিভাগগুলো ৩য় মাত্রার শিরোনাম দিয়ে, ইত্যাদি। HTML-এ এই কাজটি করা হয় heading levels দিয়ে <code>h1</code>, <code>h2</code> and <code>h3</code> (তুমি এইভাবে <code>h6</code> পর্যন্ত জেতে পারো, কিন্তু বাস্তবে তোমার এতো লেভেলের শিরোনাম ব্যাবহার করা উচিত হবে না)। headings এর মধ্যে যেকোনো কন্টেন্ট দেওয়া যাবে, কিন্তু এখনকার জন্য, অনুচ্ছেদেই থাকি। চল পূর্ববর্তী উদাহরনে যাই।</p>
+
+    <pre><code class="language-markup">&lt;h1&gt;My website is all about food&lt;/h1&gt;
+
+&lt;p&gt;I &lt;strong&gt;love&lt;/strong&gt; food. It is what I look forward to
+&lt;em&gt;every&lt;/em&gt; morning, lunchtime and evening. My favourite foods are
+ as follows:&lt;/p&gt;
+
+&lt;h2&gt;Cheese&lt;/h2&gt;
+
+&lt;p&gt;Let's start with cheese. Cheeses are like an international culture 
+trip, with every country having its own famous varieties.&lt;/p&gt;
+
+&lt;h3&gt;Edam&lt;/h3&gt;
+
+&lt;p&gt;Edam is...&lt;/p&gt;
+
+&lt;h3&gt;Stilton&lt;/h3&gt;
+
+&lt;p&gt;Stilton is...&lt;/p&gt;
+
+&lt;h3&gt;Gorgonzola&lt;/h3&gt;
+
+&lt;p&gt;Gorgonzola is...&lt;/p&gt;</code></pre>
+
+<p>তো এখন আমাদের একটা উচ্চ পর্যায়ের শিরোনাম আছে যা পুরো কন্টেন্ট শুরু করে, তারপর আছে একটা ২য় পর্যায়ের উপবিভাগ, তারপর এই ৩য় পর্যায়ের শিরোনাম দ্বারা ৩টা উপ-উপবিভাগ আছে। চল আমাদের নিজের মত করে এতে কিছু শিরোনাম এবং অনুচ্ছেদ যুক্ত করি।</p>
+
+    <h3>তালিকা</h3>
+
+    <p>HTML দিয়ে আমরা তালিকা তৈরি করতে পারি, যেটা খুবই গুরুত্ব। জীবনটাই তালিকায় ভরা, রেসিপি আর কেনাকাটারমত গুরুত্বপূর্ণ তালিকা থেকে শুরু করে অনেক কম গুরুত্বপূর্ণ তালিকা পর্যন্ত।  যখন তুমি Lego বা এইজাতীয় কোন খেলনা বা ভিদিও গেম খেলো, তুমি তালিকা তৈরি করছ - "পরবর্তীতে কোন ৫টা টুকরা আমি আমার মডেলে রাখবো।", বা  "Ultra Combo করতে আমি আমার Xbox 360 এর বোতামগুলো  কোন অনুক্রমে চাপবো?" এই অনুচ্ছেদে আমি তোমাদের  দুই ধরনের তালিকার সাথে পরিচিত করব।</p>
+    
+    <p><em>Unordered lists</em> হচ্ছে এমন তালিকা যেখানে  তালিকার ক্রম কোন বিষয় না। উদাহরণস্বরূপ, একটা ছোট কেনাকাটার তালিকাঃ</p>
+
+    <ul>
+      <li>Eggs</li>
+      <li>Milk</li>
+      <li>Cheese</li>
+      <li>Co-Co Pops</li>
+      <li>Orange Juice</li>
+    </ul>
+
+<p>আমরা এটা এইভাবে মার্কআপ করবোঃ</p>
+
+    <pre><code class="language-markup">&lt;ul&gt;
+  &lt;li&gt;Eggs&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+  &lt;li&gt;Cheese&lt;/li&gt;
+  &lt;li&gt;Co-Co Pops&lt;/li&gt;
+  &lt;li&gt;Orange Juice&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    
+<p>শুরুর <code>&lt;ul&gt;</code> ট্যাগ নির্দেশ করে তালিকার শুরু আর শেষের <code>&lt;/ul&gt;</code> ট্যাগ নির্দেশ করে কোথায় তালিকার শেষ, এবং তালিকার উপাদানগুলো প্রত্যেকটা <code>&lt;li&gt; ... &lt;/li&gt;</code> ট্যাগ দ্বারা ঘিরে আছে।</p>
+
+    <p><em>Ordered lists</em> এমন তালিকা যেখানে ক্রমের গুরুত্ব আছে। উদাহরণসরূপ একটা রেসিপিতে, তুমি যদি ক্রম অনুসারে কাজ না কর তবে তুমি সঠিক কাবারটি তৈরি করতে পারবে না। Ordered list-ও unordered list-এর মত হুবহু একই রকম, শুধু ধারণকারী ইলিমেন্টটি <code>ul</code> না হয়ে <code>ol</code> হয়।</p>
+
+    <pre><code class="language-markup">&lt;ol&gt;
+  &lt;li&gt;Preheat the oven to 150 C / gas mark 2.&lt;/li&gt;
+  &lt;li&gt;Add butter and sugar in a bowl and mix well until 
+    light and fluffy.&lt;/li&gt;
+  &lt;li&gt;Add the vanilla, mix, then add the flour and mix well.&lt;/li&gt;
+  &lt;li&gt;Roll out to about 5mm. Cut into shapes.&lt;/li&gt;
+  &lt;li&gt;Bake for 25 minutes or until golden brown.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+    <p>চল আমাদের প্রকল্পে একটা অথবা দুইটা তালিকা যুক্ত করি</p>
+
+    <h3>জোর দেওয়া</h3>
+
+    <p>HTML-এ এমন কিছু ইলিমেন্ট আছে যা কোন শব্দ বা একাধিক শব্দকে লক্ষণীয় করতে, বা অন্যদের থেকে গুরুত্বপূর্ণ করতে ব্যবহৃত হয়। এখানে আমরা দুইটা দেখবঃ</p>
+
+    <ul>
+      <li><code>strong</code> হচ্ছে বেশি গুরুত্বপূর্ণ শব্দের জন্য</li>
+      <li><code>em</code> লক্ষণীয়টার জন্য, তুমি যাকে আলাদাকরন বলতে পারো</li>
+    </ul>
+
+    <p>চল কয়েকটা উদাহরণ দেখা যাকঃ</p>
+
+    <pre><code class="language-markup">&lt;p&gt;I have been away from home for &lt;em&gt;far too long&lt;/em&gt;...&lt;/p&gt;
+
+&lt;p&gt;When you phone up, be sure to &lt;strong&gt;quote your 
+reference number&lt;/strong&gt;.&lt;/p&gt;</code></pre>
+
+    <p>তুমি চাইলে দুটোই ব্যাবহার করে একি সাথে গুরুত্বপূর্ণতা এবং লক্ষণীয়টা পেতে পারঃ</p>
+
+<pre><code class="language-markup">&lt;p&gt;When you phone up, be sure to &lt;strong&gt;quote your 
+reference number: &lt;em&gt;3387&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;</code></pre>
+
+    <p>যখন তুমি এই ইলিমেন্ট গুলো ব্যাবহার করবে, অবশ্যই সঠিকভাবে করতে হবে, তমাকে অবশ্যই অপরপ্রান্তের ক্লোজ ট্যাগ সঠিকভাবে দিতে হবে। এইটা ভুলঃ</p>
+
+<pre><code class="language-markup">&lt;p&gt;When you phone up, be sure to &lt;strong&gt;quote your 
+reference number: &lt;em&gt;3387&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;</code></pre>
+
+    <h3>Block বনাম inline ইলিমেন্টস</h3>
+
+    <p>একটা সংক্ষিপ্ত নোট হিসেবে, যখন তুমি অনেক বেশি ওয়েব ডিজাইন করা শুরু করবে তখন তুমি <em>inline element</em> এবং <em>block level element</em> এর কথা জানবে। একটা block level element পেজের পুরো জায়গা দখল করে থাকে, এবং পূর্বের কন্টেন্টের নিচে নতুন লাইনে চলে যায়। Headings এবং paragraphs খুব ভালো উদাহরণ। একটা inline element সবসময় একটা block ইলিমেন্টের মধ্যে বসে এবং এটি অন্য কন্টেন্টের সাথে পাশাপাশি বসতে পারে। পুরো পেজ দখল করে না। এটা নতুন লাইনে যায় না। emphasis এবং strong হচ্ছে উৎকৃষ্ট উদাহরণ। তুমি একটা block level elements-এর ভেতরে আরেকটা block level elements দিতে পারো, কিন্তু তুমি কোন  inline elements এর মধ্যে block level elements রাখতে পারো না। </p>
+
+
+  </main>	
+
+  <nav>
+  <p>পূর্বেরঃ<br><a href="lesson2.html">শুরু করা</a></p>
+  <p><a href="index.html">প্রধান index</a></p>
+  <p>পরেরঃ<br><a href="lesson4.html">আরও HTML</a></p>
+</nav>
+
+<hr>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Share it, make it better, use it for good.</p>
+</body>
+  <script src="prism/prism.js"></script>
+</html>

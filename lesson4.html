@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>এটা আমার ওয়েবঃ অধ্যায় চার</title>
+  <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Alfa+Slab+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css">  
+  <link rel="stylesheet" href="prism/prism.css">
+</head>
+<body>
+
+<hgroup>
+  <h1>More HTML to get stuck into</h1>
+  <h2>এটা আমার ওয়েবঃ অধ্যায় চার</h2>
+</hgroup>
+
+<nav>
+  <p>Previous:<br><a href="lesson3.html">HTML basics</a></p>
+  <p><a href="index.html">Main index</a></p>
+  <p>Next:<br><a href="lesson5.html">CSS basics</a></p>
+</nav>
+
+  <main>
+
+  <p>সিএসএ স্টাইলিংএ আরো গভীরে যাওয়ার আগে চলুন এইচটিএমএল কিছু বৈশিষ্ঠ সম্পর্কে জেনে নেই, যা ওয়েব ডিজাইনের ক্ষেত্রে সব সময় কাজে আসবে। আমি এইচটিএমএল এর সকল বিষয় নিয়ে আলোচনা করছি না, কারন আমাদের কাছে সময় কম, সত্য বলতে এইচটিএমএল কিছুটা বিরক্তিকর, এটার সব সবকিছু প্রায় একই ভাবে কাজ করে। একটা অথবা দুইটা এলিমেন্ট কি করে কাজ করে তা যোদি আপনি জানতে পারেন, তাহলে আপনার কাছে অন্য গুলা নিয়ে কাজ করা সহজ হয়ে যাবে।</p>
+
+  <p>এখানে আমি যে নতুন এলিমেন্ট নিয়ে আলোচনা করব তা হলঃ</p>
+
+  <ul>
+    <li><code>img</code>: image এলিমেন্ট আপনার পেজে কোন ছবি যোগ করার সুবিধা দেয়।</li>
+    <li><code>a</code>: anchor এলিমেন্ট আপনাকে অন্য অন্য পৃষ্ঠা অথবা অন্য পৃষ্ঠার কিছু অংশের সাথে আপনাকে লিংক তৈরী করার সুবিধা দেয়।</li>
+    <li><code>iframe</code>: Inline frames আপনাকে অন্য ওয়েবসাইট থেকে কন্টনেন্ট যোগ করার সুবিধা দেয়, যেমনঃ ইউটিউব ভিডিও।</li>
+    <li>Container elements: কিছু এলিমেন্ট যেমন <code>div</code> যা আপনাকে কিছু এলিমেন্ট কে বহন করা অথবা গ্রুপ তৈরী করার সুবিধা দেয়, যা দিয়ে আপনি কোন একধরনের সকল আইটেম কে একসাথে স্ক্রিপ্ট অথবা স্টাইল করতে পারবেন।</li>
+  </ul>
+
+   <h2>HTML এ ছবি</h2>
+
+   <p>ওয়েব পেজে ছবি ইনসার্ট করার সুবিধা আসার পুর্বে ওয়েব পেজে শুধুই টেক্স থাকত। আপনি কল্পনা করতে পারেন কত তখনকার ওয়েব পেজ গুলা কত বোরিং ছিল! সাল ১৯৯৩ এর কাছাকাছি সময়ে <code>img</code> এলিমেন্ট আবিষ্কার করা হয়। তারপর ওয়েব পেজ গুলা সুন্দর হয়ে ওঠে।</p>
+     
+   <h3>আপনার ওয়েব পেজে ছবি অন্তর্ভুক্ত করার পদ্ধতি</h3>
+
+   <p>শুরু করার পুর্বে <code>img</code> element এর সাধারন কিছু উদাহরন আমাদের প্রজেক্টে যোগ করা যায়। আপনি এটাকে যেখানে খুশি যোগ করতে পারেন।</p>
+
+   <pre><code class="language-markup">&lt;img src="http://people.mozilla.org/~cmills/st-chads/images/kitten.jpg"&gt;</code></pre>
+
+   <p>আপনি এখন কিউট একটা বিড়াল ছানাকে আপনার পেজে বসে থাকতে দেখছেন। আপনি হয়ত খেয়াল করেছেন, image element একটি empty element এর উদাহরন, এবং এই মুহুর্তে এটার একটি মাত্রই  attribute রয়েছে, <code>src</code> (<em>source</em> এর সংক্ষিপ্ত রুপ)। এটা একমাত্র attribute যা আপনার ছবিকে এলিমেন্ট দেয় এবং আপনার পেজে ছবিটির লোকেশন নির্ধারন করে। এই ক্ষেত্রে আমার ওয়েবসাইটের ইমেজের লোকেশন টি ব্যাবহার করা হয়েছে, কিন্তু আপনি এরকম অন্য সাইটের ইমেজ অথবা লোকাল কম্পিউটারের ইমেজ ব্যাবহার করতে পারেন।</p>
+
+   <h3>ব্যাবহারের জন্য ছবির খোজ</h3>
+
+   <p>চলুন কিছু ছবি খোজা হোক আপনার পেজে ব্যাবহার করার জন্য। বর্তমানে পরীক্ষার জন্য ছবি খোজার জন্য সবচেয়ে উত্তম উপায় হল <a href="http://www.google.co.uk/imghp">Google image search</a>, যা গুগলের একটি সাইট যা আপনাকে ইমেজ সার্চ করার সুবিধা দেয়।</p>
+
+   <ol>
+     <li>এমন কিছুর খোজ করুন যা আপনি দেখাতে চান, এবং কোন ইমেজের রেজাল্টে ক্লিক করুন। ছবিটি হাইলাইটেড হবে এবং বড় হবে।</li>
+     <li>তারপর <em>View image</em> বাটনে ক্লিক করুন, যা শুধু মাত্র ছবিকে আপনার ব্রাউজারে আনবে।</li>
+     <li>আপনি যে ছবিটি দেখছেন সেটার এড্রেস বারের ওয়েব এড্রেস টি কপি করুন (আপনি এটা ফায়ারফক্সে Right/Ctrl প্রেস করে <em>Copy image colation;</em> ক্লিক করে অথবা সিলেক্ট করে করতে পারবেন। প্রায় প্রতিটা ব্রাউজারেরই কপি করার উপায় এরকম।)</li>
+     <li>আমাদের উপরে ব্যাবহৃত কোডে ইমেজ লোকেশন টি প্রয়োগ করুন, আমার কিউট বিড়াল ছানার জায়গায় আপনার ইমেজ টি দেখতে পারবেন।</li>
+   </ol>
+
+   <p class="note">আপনি হয়তবা জানেন ইমেজ বিভিন্ন ফরমাটের হয়। কোনটা PNG, কোনটা JPG, ইত্যাদি। আপনি বিভিন্ন প্রকারের ইমেজ সম্পর্কে গাইড পাবেন এই লিংকে। লিংকঃ <a href="https://mozteach.makes.org/thimble/designing-for-the-web-images">Designing for the Web: Images</a> ।</p>
+
+   <h3>ছবির আকার নিয়ন্ত্রন</h3>
+
+   <p>আপনি হয়ত লক্ষ করেছেন ছবিটি অনেক বড়! আমরা এটাকে নিয়ন্ত্রন করতে পারি <code>width</code> attribute আমাদের কোড এ যোগ করে। উদাহরন স্বরুপঃ</p>
+
+   <pre><code class="language-markup">&lt;img src="http://people.mozilla.org/~cmills/st-chads/images/kitten.jpg"
+   width="200"&gt;</code></pre>
+
+   <p>আমার অরিজিনাল বিড়ালের ছবিটি ৪০০পিক্সেল চওড়া ছিল, আমি এখন এটাকে ২০০পিক্সেল চওড়া করব, এর উচ্চতা রেশিও নিয়ন্ত্রন করে নিজে নিজে ঠিক হয়ে যাবে (টেকনিক্যালি বলতে গেলে, <em>aspect ratio</em> এটা নিয়ন্ত্রন করে চলে)। যোদি  <code>height</code> attribute দেওয়া হয় তাহলেও এটা শুধু এটা ঠিক মত কাজ করবে।</p>
+
+   <p>যোদি  <code>width</code> এবং <code>height</code> attributes দোওয়া হয় তাহলে জিনিস টা একটু আওলিয়ে যেতে পারে। যেমনঃ </p>
+
+   <pre><code class="language-markup">&lt;img src="http://people.mozilla.org/~cmills/st-chads/images/kitten.jpg"
+   width="600" height="700"&gt;</code></pre>
+
+   <p>এই কোড আমার বিড়াল ছানাকে স্ট্রেচ করে দিচ্ছে, যা আসলেই ভয়ানক লাগছে। তাহলে এখানকার শিক্ষা হলঃ উভয় কে চিহ্নিত না করে একটি করুন, যোদি আপনি কি করছেন তা বিষয়ে শিওর থাকেন তা আলাদা বেপার! এটা অনেক ক্ষেত্রে ব্যাবহার উপযোগী হতে পারে। যেমনঃ যোদি আপনার ইমেজ টি সঠিক সাইজে থাকে (যে সাইজে আপনি দেখাতে চান) তাহলে শুধু  width অথবা height চিহ্নিত করে দিন, এভাবে আপনার পেজে সঠিক মাপে আপনার ছবি টি আসবে এবং পেজ কে দেখতে দৃষ্টিমধুর করে তুলবে।</p>
+
+   <p class="note">বাস্তব ওয়েব ডিজাইনের ক্ষেত্রে, আমরা আমাদের নিজস্ব ইমেজ তৈরী করি, সেগুলোকে নিজের প্রয়োজন মত মাপ দেই, যার কারনে <code>width</code> অথবা <code>height</code> attributes এর ব্যাবহার তেমন করা লাগে না। কিন্তু এটা জেনে রাখা ভাল, এবং এগুলোর জন্যই আমাদের কোর্সে সময় আছে।</p>
+   
+   <p class="note">বাস্তব ওয়েব ডিজাইনে এটাও খিয়াল রাখা লাগে যে আপনি যে ইমেজ টি ব্যাবহার করছেন তা ব্যাবহার করার পার্মিশন আপনার কাছে আছে কি না! (কার কাছে আছে <em>copyright</em>?) কিন্তু যখন আপনি শেখার জন্য ইমেজ গুলি ব্যাবহার করছেন, এটা আসলেই কোন ব্যাপার না।</p>
+
+   <h3>অল্টার্নেটিভ টেক্সট</h3>
+
+   <p>আগে বাড়ার আগে আমি আপনাদের সাথে আরেক্টা attribute সম্পর্কে কথা বলবঃ <code>alt</code>. যখন আপনার ইমেজ দেখান সম্ভব হবে না অথবা ইউজার যে ব্রাউজার ব্যাবহার করছে তা যোদি ইমেজ সাপোর্টেড না হয়, তখন এটি ইমেজ সম্পর্কে তথ্য দেখাবে।</p>
+
+   <pএকটি উদাহরন দেখা যাক</p>
+
+   <pre><code class="language-markup">&lt;img src="http://people.mozilla.org/~cmills/st-chads/images/kitten.jpg"
+          alt="A cute ginger tabby cat with green eyes"&gt;</code></pre>
+
+   <p>To see <code>alt</code> in action, try misspelling your image's web address (the <code>src</code> attribute value.)
+
+  <img src="images/4b.png" alt="Some text that says A cute ginger tabby cat with green eyes" style="border: 2px solid black">
+
+   <h3>Web accessibility নিয়ে কিছু কথা</h3>
+
+   <p>এখন <code>alt</code> হতে একটু দুরে গিয়ে , <em>web accessibility</em> নিয়ে কথা বলা যাক। এটা এমন একটা অনুশিলন যা ওয়েবসাইট কে সকলের ব্যাবহার উপযোগী করা যায়। উদাহরন স্বরুপ, একজন অন্ধ মানুষ কম্পিউটার দেখতে পারবে না, তখন সে <strong>screen reader</strong> ব্যাবহার করবে ওয়েব ব্রাউজার অথবা অন্য অ্যাপ্লিকেশনের সকল লেখা পড়ার জন্য। ইমেজ ও টেক্স এর মধ্যে অনেক পার্থক্য রয়েছে, তাই ইমেজ পড়া সম্ভব হয় না, এটাই ইমেজ ডিস্ক্রিপশন যোগ করার আসল কারন। চলুন একটা ভিডিওর মাধ্যমে দেখা যাক সাধারন অন্ধ মানুষ কিভাবে কম্পিউটার ব্যাবহার করে। </p>
+
+   <iframe width="560" height="315" src="//www.youtube.com/embed/UzffnbBex6c" frameborder="0" allowfullscreen></iframe>
+   
+   <h2>HTML Links</h2>
+
+   <p>HTML এর সবচেয়ে গুরুত্বপুর্ন এলিমেন্ট হচ্ছে link, বলতে গেলে ইমেজ থেকেও বেশি গুরুত্বপুর্ন। এটিই web কে <em>WEB</em> হিসেবে গড়ে তোলে। আপনি অন্য পেজের সাথে লিংক করতে পারেন, অথবা অন্য ওয়েবসাইটের কোন অংশ যোগ করতে পারেন, অথবা বিভিন্ন ফাইল (উদাহরন স্বরুপ PDF, অথবা Word ডকুমেন্ট) যোগ করতে পারেন। এখানে কিছু উদাহর দেওয়া হলঃ</p>
+   
+  <pre><code class="language-markup">&lt;p&gt;Here is a link to the
+&lt;a href="http://www.mozilla.org/"&gt;Mozilla homepage&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  
+  <p>So here, we are wrapping the text "Mozilla homepage" in an <code>&lt;a&gt;&lt;/a&gt;</code> element, which makes that text a link.</p>
+
+  <img src="images/4c.png" alt="An example of linked text on the Web - the whole sentence says Here is a link to the Mozilla homepage with Mozilla home linked" style="border: 2px solid black">
+
+   <p>এখন চলুন আমাদের প্রজেক্ট কিছু সিম্পল লিংক যোগ করা হোক। আপনি যে কোন পরিমানে লিংক নিতে পারেন আপনার পেজের জন্য। নীল কালারের আন্ডার লাইন কৃত লেখাটা লিংক হিসেবে দেখানো হয়। এই রিতী ওয়েবের শুরু থেকে চলে আসছে। একবার লিংক টি দর্শন করার পর এটি বেগুনী রংএর দেখায়। সিএসএস (CSS) ব্যাবহার করে লিংকের কালার অথবা অন্য কিছু পরিবর্তন করতে পারবেন, তবে এটা নিয়ে পরে আলোচনা করা হবে।</p>
+
+   <p class="note">লিংকের লেখা অবস্যই পেজ (অথবা রিসোর্সের) নির্দেশক হতে হবে। যোদি আপনি বিড়াল সম্পর্কে কোন লিংক যোগ করতে চান তাহলে "click here" অথবা "more information" এর স্থলে "more information aboit cats" লিখবেন। যারা স্ক্রিনরিডার ব্যাবহার করবেন তাদের জন্য জিনিসটা সহজ হয়ে যাবে।</p>
+   
+   <h2>IFrames</h2>
+
+   <p>বর্তমান পেজে অন্য ওয়েব কন্টনেন্ট যোগ করার জন্য ব্যাবহার করা হয় IFrames । আপনি  কল্পনা করতে পারেন, এটা সহজে কঠিন হতে পারে, কিন্তু এটা খুবই সহজে করা যায় কিছু  embedding দ্বারা। যেমনঃ <a href="http://www.youtube.com">Youtube</a> ইউটিউব ভিডিও আপনার পেজে যোগ করার জন্য,</p>
+
+   <ol>
+     <li>আপনি যে <a href="http://www.youtube.com">Youtube</a></li> ভিডিও টি আপনার ওয়েব পেজে যোগ করতে চান সেখানে যান।
+     <li>ভিডিওর নিচে, <em>Share</em> বাটনে ক্লিক করেন,যা আপনাকে ভিডিও টি শেয়ার করার বিভিন্ন উপায় বলবে।</li>
+     <li>সেখানে একটি <em>Embed</em> বাটন আছে <em>Share</em> বাটনের নিচে, সেখানে ক্লিক করুন</li>
+     <li>সেটি আপনাকে HTML কোন দিবে, যা আপনি আপনার পেজে কপি / পেস্ট করে ভিডিও টি যোগ করতে পারবেন।</li>
+   </ol>
+
+   <p>কোড টা কিছুটা এরকম দেখাবেঃ</p>
+
+   <pre><code class="language-markup">&lt;iframe width="560" height="315"
+src="//www.youtube.com/embed/a9O0MgjoeBM"
+frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+
+    <p>আপনাকে <code>src</code> attribute নিয়ে চিন্তা করা দরকার, যা আপনার শেয়ার করা ভিডিও কে কন্ট্রোল করে। আপনি <code>width</code> and <code>height</code> attributes চেঞ্জ করতে পারবেন, যেন ভিডিও টি বিভিন্ন পরিমান জায়গা নিয়ে শো করে। এখানে লক্ষ করার বিষয় হচ্ছে ভিডিও টি ওয়েবে ইমেজ এর মত কাজ করে না। আপনি যখন রেশিও পরিবর্তন করবেন তা ব্রাউজারের প্রসেসিং পাওয়ার অনুসারে পরিবর্তন হতে পারে।</p>
+
+    <p class="note">আপনি একটা <code>title</code> attribute <code>iframe</code> element এ যোগ দিতে পারেন, তখন ভিডিওর কোড টি কিছুটা এরকম দেখাবেঃ</p>
+
+    <pre><code class="language-markup">&lt;iframe width="560" height="315"
+title="Alcatel One Touch Fire z FireFox OS"
+src="//www.youtube.com/embed/a9O0MgjoeBM"
+frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+
+
+   <h2>Container elements</h2>
+
+   <p>এগিয়ে যাওয়ার আগে কিছু কথা বলা উচিত, এর আগে আমি টেমপ্লেটে কিছু শব্দ নিয়ে বলেছি, যা আপনি হয়ত লক্ষ করেছেন। সেগুলোর গঠন কিছুটা এরকমঃ</p>
+
+<pre><code class="language-markup">&lt;div class="subsection"&gt;
+  &lt;h2&gt;Statistics&lt;/h2&gt;
+
+  &lt;h3&gt;Band members&lt;/h3&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Les Claypool&lt;/strong&gt;: Bass and vocals&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Larry "Ler" LaLonde&lt;/strong&gt;: Guitar&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Tim "Herb" Alexander&lt;/strong&gt;: Drums&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h3&gt;Active years&lt;/h3&gt;
+
+  &lt;p&gt;1984–2000, 2003–present&lt;/p&gt;
+
+  &lt;h3&gt;Genre&lt;/h3&gt;
+
+  &lt;p&gt;Alternative/Funk/Progressive rock&lt;/p&gt;
+
+&lt;/div&gt;</code></pre>
+
+   <p>এবং এরকম</p>
+
+<pre><code class="language-markup">&lt;header&gt;
+  &lt;h1&gt;My diary&lt;/h1&gt;
+  &lt;p&gt;This is my diary! Here I like to record my thoughts.&lt;/p&gt;
+&lt;/header&gt;</code></pre>
+
+  <p><code>div</code> মত কিছু এলিমেন্ট (<em>division</em> এর সংক্ষিপ্ত রুপ), <code>header</code> এবং <code>footer</code> সমুহ সাধারনত বিভিন্ন এলিমেন্ট সমুহ কে গ্রুপ করার কন্টেইনার।  আপনি যকন এরকম করবেন তখন CSS অথবা JavaScript এ সিঙ্গেল এলিমেন্টের জন্য কোড করে সব গুলার উপর তার প্রভাব তৈরী করা যায়। আমরা যোদি হেডিং ও প্যারাগ্রাফের ব্যাকগ্রাউন্ড কালার দিতে চাই তাহলে আমরা কি করব? এখানে রয়েছে সমাধান!</p>
+
+
+  </main>	
+
+<nav>
+  <p>Previous:<br><a href="lesson3.html">HTML basics</a></p>
+  <p><a href="index.html">Main index</a></p>
+  <p>Next:<br><a href="lesson5.html">CSS basics</a></p>
+</nav>
+
+<hr>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Share it, make it better, use it for good.</p>
+</body>
+  <script src="prism/prism.js"></script>
+</html>

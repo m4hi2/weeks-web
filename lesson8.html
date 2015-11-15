@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>It's my Web: Lesson 8</title>
+  <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Alfa+Slab+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css">  
+  <link rel="stylesheet" href="prism/prism.css"> 
+</head>
+<body>
+
+<hgroup>
+  <h1>CSS layout and free time</h1>
+  <h2>এটা আমার ওয়েব! অধ্যায় ৮</h2>
+</hgroup>
+
+<nav>
+  <p>Previous:<br><a href="lesson7.html">সিএসএস ডেকরেশন</a></p>
+  <p><a href="index.html">Main index</a></p>
+  <p>Next:<br><a href="lesson9.html">সিএসএস পজিশনিং</a></p>
+</nav>
+
+  <main>
+    <p>আমাদের পাঠের অষ্টম অধ্যায়ে স্বাগতম! এখানে ব্যাপারটা আপনার পছন্দের উপর নির্ভর করে। আপনি যেভাবে বর্তমানে করতেছেন সেইভাবেই করে যেতে পরেন অথবা নতুন আরো এডভান্স কিছু শিখতে পারেন। অথবা আপনি উভয়ে করতে পারেন। ব্যাপারটা আপনার উপর নির্ভর করে, আপনি দ্রুত কোন উপায়ে জিনিসটা করতে সক্ষম হচ্ছেন।</p>
+
+    <h2>ফ্লোটস ও সিএসএস লেআউট</h2>
+
+    <p>আপনি যখন বিভিন্ন ওয়েবসাইট দেখবেন আপনি দেখতে পাবেন, তাদের বেশিরভাগেই একটা সিঙ্গেল কলামের লেখা থাকে না পেজের উপর থেকে নিচ পর্যন্ত। বেশিরভাগেরই একাধিক কলামে লেখা সমুহ থাকে একটির সাথে আরেকটির সমন্বয় বজায় রেখে। উদাহরন স্বরুপ আপনি লক্ষ করতে পারেন <a href="https://developer.mozilla.org/en-US/">মজিলা ডেভেলপার নেটওয়ার্ক</a>, <a href="http://www.bbc.co.uk/">বিবিসির হোম পেজ</a>, এবং উত্তম উদাহরন হিসেবে লক্ষ করতে পারেন, আমার‌‌ <a href="https://chrisdavidmills.makes.org/thimble/i-love-primus">ফ্যানসইট টেমপ্লেট</a>। তাহলে আমরা এটা কিভাবে করি?</p>
+
+    <img src="images/8a.png" alt="The BBC website showing multiple columns of content, and the leading story as an excited young girl at Christmas with the caption what are the odds of a white Christmas this year?">
+
+    <h3>ফ্রোটস এর পরিচয়</h3>
+
+    <p><code>float</code>, (ফ্লোটস) নামক একটি সিএসএস প্রোপার্টি আছে যেটি <code>left</code> (বাম) অথবা <code>right</code> (ডান) এর ভ্যালু গ্রহন করতে পারে। যখন আপনি এটিকে আপনার পেজের কোন এলিমেন্ট এর উপর প্রয়োগ করেন, এলিমেন্ট সমুহ এরির সোর্স বোর্ডারের নিচে বাম অথবা ডান পার্শে অবস্থান করে। আসলে এটিকে ডিজাইন করা হয়েছে ছবি সমুহকে ব্লক অথবা লেখার কাছাকাছি অবস্থান করানর জন্য, আপনি এই উপায় পত্রিকা অথবা মেগাজিনে দেখতে পারবেন। চলুন কিছু উদাহরন দেখে নেওয়া যাক।</p>
+
+    <ol>
+      <li>থিম্বল হতে নতুন তৈরী করুন <a href="https://thimble.webmaker.org/">Thimble page</a>.</li>
+      <li>এই পেজ এর  <code>body</code> (বডিতে), নিচের এইচটিএমএল কোড টি লিখুনঃ</li>
+<pre><code class="language-markup">&lt;img src="http://people.mozilla.org/~cmills/st-chads/images/duck.jpg"
+     alt="A yellow duck"&gt;
+&lt;p&gt;My rubber duckie is really gorgeous. Lorem ipsum dolor sit
+amet, consectetur adipiscing elit. Praesent eget gravida leo. Duis
+interdum ac libero sit amet molestie. Phasellus venenatis nisl non
+justo vestibulum porta. Donec nec dictum justo, at mollis nulla. Ut
+viverra pretiumn consectetur. Quisque eros magna, pretium eu
+tempus ac, posuere a quam. Nunc hendrerit luctus gravida. Donec at
+ligula quis tortor bibendum dignissim eu ac est. Phasellus
+scelerisque non elit eu aliquam. Vestibulum venenatis varius ante 
+vitae faucibus. Quisque blandit, arcu sed malesuada tempus, ante 
+lorem laoreet massa, sit amet pretium elit purus et lorem. 
+Vestibulum venenatis varius ante vitae faucibus. Quisque blandit,
+arcu sed malesuada tempus, ante lorem laoreet massa, sit amet 
+pretium elit purus et lorem.&lt;/p&gt;</code></pre> 
+      <li>একটি <code>style</code> এলিমেন্ট ডকুমেন্টটির হেড এ যোগ করুন যা আমরা এর পুর্বেও একবার করেছি।</li>
+      <li><code>style</code> এলিমেন্ট টি নিচের সিএসএস এ লিখুনঃ</li>
+<pre><code class="language-css">img {
+  float: left;
+}</code></pre>
+      <li>এখন <code>left</code> ভ্যালুটিকে <code>right</code> ভ্যালুতে পরিবর্তন করার পর দেখুন কি হয়।</li>
+    </ol>
+
+    <p>এখন আপনি সিএসএস এর ভিত্তি তৈরী করে ফেলেছেন। এখন আরেকটু কঠিনের দিকে দেখা যাক।</p>
+
+    <h3>একটি সরল সিএসএস লেআউট</h3>
+
+    <p>ফ্লোটস যোদিও সিম্পল ফ্লোটেড ছবির জন্য উপযোগী, তবুও আপনি ফ্লোট কে আপনার ইচ্ছা মত জিনিসের উপর প্রয়োগ করতে পারবেন। ওয়েব ডেভেলপার খুব শিঘ্রই বুঝতে পারেন যে তারা ফ্লোটস দ্বারা অনেক কলাম ও লেআউট তৈরী করতে পারেন, যেটা অনেক মজাদার।</p>
+
+    <p>উক্ত ধারনা সম্পর্কে পরিচিত হতে, উদাহরনের বহু কলাম বিশিষ্ঠ লেআউটের টি লক্ষ করুন।</p>
+
+    <ol>
+      <li>থিম্বল  হতে নতুন তৈরী  করুন<a href="https://thimble.webmaker.org/">Thimble page</a>.</li>
+      <li>নতুন পেজটির <code>body</code> (বডি)তে নিচের এইচটিএমএল টি যোগ করুনঃ:</li>
+<pre><code class="language-markup">&lt;div class="header"&gt;&lt;h1&gt;This is my page heading&lt;/h1&gt;&lt;/div&gt;
+&lt;div class="main-column"&gt;&lt;p&gt;This is my main column.&lt;/p&gt;&lt;/div&gt;
+&lt;div class="side-column"&gt;&lt;p&gt;This is my sidebar.&lt;/p&gt;&lt;/div&gt;
+&lt;div class="footer"&gt;&lt;p&gt;My page © 2014.&lt;/p&gt;&lt;/div&gt;</code></pre>
+      <li>আমরা এখন চারটি কনটেইনার এলিমেন্ট পেলাম যার ভিতর কিছু কনটেন্ট আছে। চলুন কন্টেন্টগুলির জায়গাটিকে হাইলাইট করে তাদের একটু উচ্চতা একটু বৃদ্ধি করা হোক, এখন আমরা যেটা দেখতে যাচ্ছি তা খুব সহজেই করা সম্ভব। আগেরবারের মত করে একটি <code>style</code> এলিমেন্ট হেড এ যোগ করুন।</li>
+      <li>নিচের সিএসএসটি <code>style</code> এলিমেন্টে যোগ করুনঃ</li>
+<pre><code class="language-css">.header, .footer {
+  background-color: green;
+  height: 100px;
+}
+
+.main-column, .side-column {
+  height: 200px;
+}
+
+.main-column {
+  background-color: blue;
+}
+
+.side-column {
+  background-color: yellow;
+}</code></pre>
+
+      <li>চলুন এবার দুই কলাম বিশিষ্ঠ লেআউট তৈরী করা হোক। এখন প্রধান কলাম ও সাইড কলাম কে একে অপরের সাথে ফিট হওয়ার জন্য এদের প্রস্থ পরিবর্তন করা দরকার। এরা একে উপরের উপরে যেন অবস্থান না করে সেজন্য আমাদের দরকার এদের উভয়কে ফ্লোট করানো। নিচের দুটি রুল পরিবর্তন করুন যেন তা এরকম দেখায়ঃ</li>
+
+ <pre><code class="language-css">.main-column {
+  background-color: blue;
+  width: 58%;
+  float: left;
+}
+
+.side-column {
+  background-color: yellow;
+  width: 40%;
+  float: right;
+}</code></pre>
+
+<li>এখন আপনার লেআউট টি নিচের স্ক্রিনশটের মত দেখাবে।</li>
+    </ol>
+
+<img src="images/8b.png" alt="A simple two column website layout, with a problem; the footer is all messed up because it is floating around the columns when it shouldnt be">
+
+<h3>ফ্লোটস এর সমস্যা সমুহ সম্পর্কে আরো পরিষ্কার হওয়া</h3>
+
+<p>তাহলে আমাদের কাছে দুইটি কলাম বিশিষ্ঠ লেআউট আছে যাদের মাঝে একটি ফাকা জায়গা আছে, কিন্তু এটা সঠিক নয়। ফুটার হতে সবুজ কালারটি ফাকা জায়গায় চলে এসেছে, এবং ফুটারের কন্টনেন্ট গুলিকে হীন ও রংহীন মনে হচ্ছে। এর কারন হল যখন আপনি কোন এলিমেন্ট কে ফ্লোট করতে বলেন, তখন এটা পেজের নিচে ফ্লোট করে। ফুটার সহ সবকিছু একে কেন্দ্র করে ফ্লোট করবে। এইটির সমাধান হচ্ছে <code>clear</code> (ক্লিয়ার) প্রোপার্টি ব্যাবহার করা। যখন আপনি এটাকে কোন এলিমেন্টের উপর প্রয়োগ করেন, তখন এই প্রোপার্টি এলিমেন্টকে বলে "এখানে ভাসা বন্ধ কর"।</p>
+
+<p><code>clear</code> তিনটির মাঝে যে কোন একটি ভ্যালু দ্বারা গঠিত হয়ঃ <code>left</code>, <code>right</code> অথবা <code>both</code>। কোনটি ব্যাবহার করবেন তা নির্ভর করে আপনি কোথায় ফ্লোটিং বন্ধ করতে চান, বামের ফ্লোটিং, ডানের ফ্লোডিং অথবা ডান ও বাম উভয় পার্শে একসাথে। তবে <code>both</code> সবচেয়ে বেশি ব্যাবহার উপযোগী ও নিরাপদ। সমস্যাটির সমাধান করার জন্য নিচের রুল গুলি আপনার সিএসএস এর নিচে যোগ করুনঃ</p>
+
+<pre><code class="language-css">.footer {
+  clear: both;
+}</code></pre>
+
+<p>এটি আপনার লেআউটের সমাধান হয়ত করেছে এবং তা নিচের স্ক্রিনশটের মত দেখাচ্ছে।</p>
+
+<img src="images/8c.png" alt="A simple two column website layout">
+
+<h3>চ্যালেঞ্জ</h3>
+
+<p>এখন আপনি দুই কলাম লেআউটের বিষয় সমুহ আয়ত্ত করে ফেলেছেন, নিচের গুলি চেষ্টা করে দেখুনঃ</p>
+
+<ul>
+  <li>আপনার প্রজেক্টে দুই কলাম বিশিষ্ঠ লেআউট যোগ করুন।</li>
+  <li>আপনার দুই কলাম বিশিষ্ঠ লেআউটটিকে তিন কলাম বিশিষ্ঠ লেআউটে পরিবর্তন করুন।</li>	
+  <li>আপনার প্রজেক্টে একটি তিন কলাম বিশিষ্ঠ লেআউট যোগ করেন।</li>
+</ul>
+
+  </main>	
+
+<nav>
+  <p>Previous:<br><a href="lesson7.html">CSS decorations</a></p>
+  <p><a href="index.html">Main index</a></p>
+  <p>Next:<br><a href="lesson9.html">CSS positioning</a></p>
+</nav>
+
+<hr>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Share it, make it better, use it for good.</p>
+
+</body>
+  <script src="prism/prism.js"></script>
+</html>

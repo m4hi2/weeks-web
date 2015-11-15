@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html lang="bn-BD">
+<head>
+	<meta charset="UTF-8">
+	<title>আমার ওয়েব : অধ্যায় ৭</title>
+  <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Alfa+Slab+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css">  
+  <link rel="stylesheet" href="prism/prism.css">
+</head>
+<body>
+
+<hgroup>
+  <h1>সিএসএস অলঙ্কর</h1>
+  <h2>আমার ওয়েব ! অধ্যায় ৭</h2>
+</hgroup>
+
+<nav>
+  <p>পূর্ববর্তী:<br><a href="lesson6.html">সিএসএস যেভাবে কাজ করে</a></p>
+  <p><a href="index.html">প্রধান সূচীপত্র</a></p>
+  <p>পরবর্তী:<br><a href="lesson8.html">সিএসএস লে-আউট</a></p>
+</nav>
+
+  <main>
+
+    <p>সিএসএস ব্যবহার করে তোমার ওয়েবপেজকে দৃষ্টিনন্দন করার অনেক রকম উপায় আছে, এবং কোর্সের এই অংশে আমি  তার মধ্যে সহজগুলো নিয়ে আলোচনা করব। তোমরা হয়ত এটা জানতে  খুবই আগ্রহী  যে, কিভাবে তোমাদের পেজে বিভিন্ন রকম সুন্দর সুন্দর ফন্ট , ড্রপ-শ্যাডো এবং কনন্টেন্টের ব্যকগ্রাউন্ডে সুন্দর কালার ব্যবহার করবে। তাহলে চল শুরু  করি।</p>
+
+    <h2>ওয়েব ফন্ট</h2>
+
+    <p>তুমি যদি আমার উদারণে দেওয়া টেমপ্লেটটা দেখে থাকো(উদাহরণস্বরূপ, আমার <a href="https://chrisdavidmills.makes.org/thimble/all-about-chris">ক্রিস সম্পর্কে সবকিছু</a> পেজটি), তাহলে তুমি কিছু সন্দর ফন্ট খেয়াল করে থাকবে , যেখানে <a href="https://thimble.webmaker.org/">ডিফল্ট থিম্বল পেজে</a> সম্পন্নরূপে অন্যরকম কিছু বিরক্তিকর ফন্ট। What gives? কিভাবে আমরা আমাদের ফন্টে ভিন্নতা আনব? </p>
+
+    <p>শুরু করার জন্য চল সিএসএস এর ঔ অংশটা দেখি যা ফন্ট নিয়ন্ত্রণ করে। একটি নতুন থিম্বল পেজে এইচটিএমএল এর হেড অংশে  <code>style</code> এলিমেন্ট তৈরি কর যেমনটা আমরা আগে করেছি এবং নিচের সিএসএসটি কোডটি লেখো :
+
+<pre><code class="language-css">p {
+  font-family: arial;
+}</code></pre> 
+
+<p>যখন এটা লেখা হবে, তুমি খেয়ার করবে যে ফন্ট পাল্টে গেছে। এইরকম হওয়ার  কারণ, আমরা font family নিদিষ্ট করে পাল্টে দিযেছে। ফন্ট ফ্যামালী হল বিভিন্ন বিকল্প ফন্টের সংগ্রহ। উদারণ স্বরূপ, একটি ফন্ট এবং তার বোল্ড এবং ইটালিক ভারর্সন। এইা নিয়ে এখণ বেশী ভাবার দরকার নেই।</p>
+
+<p>এখন <code>p</code>সিলেক্টরটিকে  <code>html</code>সিলেক্টরে পরিবর্তন করো। তুমি খেয়াল করলে দেখবে যে খুব বেশী পরিরর্তন হয়নি। এর কারণ <code>html</code> এলিমেন্টের ফন্ট সেটিং উত্তরাধীকার সূত্রে তার অন্তগর্ত সব এলিমেনই পাবে। উদাহরণের জন্য HTML বডিতে কিছু এলিমেন্ট যোগ করো  (হেডিং এবং প্যারাগ্রাফ ব্যবহার করলে ভাল হয়) তাহলেই তুমি দেখতে পাবে আমি আসলে কি বোঝাতে চেয়েছি। সবগুলি এলিমেন্টই <code>html</code> এলিমেন্টের মত একই ফন্ট ধারণ করবে।  </p>
+
+<p>এখন আরো একটি CSS কোড লিখো তোমার হেডিং এর জন্য।  উদাহরণস্বরূপঃ</p>
+
+<pre><code class="language-css">h1 {
+  font-family: 'courier new';
+}</code></pre> 
+
+<p class="note">নোটঃ তুমি যদি  ফন্ট ফ্যামিলির নাম একাধিক অক্ষরের দিয়ে থাকো, তবে অবশ্যই নামটিকে কোটেশনের ভিতর লিখতে হবে। </p>
+
+<p>সাধারণ ভাবে বলতে গেলে এই ভাবেই ওয়েবপেজে ফন্ট ব্যবহারিত হয়। তুমি একটি বেজ ফন্ট নিধারণ করে দিয়েছো এবং এটি সমস্ত ওয়েবপেজ জুড়েই প্রয়োগ হবে। তোমার যেখানে প্রয়োজন তুমি চাইলেই সেখানে এই ফন্ট পরিরর্তন করতে পারবে।</p>
+
+<h3>আমরা কোন ফন্টগুলো ব্যবহার করতে পারব?</h3>
+
+<p>পরবর্তী যে বিষয়টা বিবেচনায় রাখতে হবে তা হল তুমি শুধু মাত্র <em>যেকোন ফন্ট</em> ই  ব্যবহার করতে পারবে না বরং তোমার পছন্দমত যেকোন জায়গাই তা ব্যবহার করতে পারবে শুধু তোমার CSS এ 	<code>font-family</code> ব্যবহার করে। ওয়েবপেজ তৈরিতে ব্যবহৃত ফন্টটি অবশ্যই ব্যবহারীর কম্পিউটারে থাকতে হবে (অন্য প্রোগ্রামগুলো যেই রকম ফন্ট ব্যবহার করে এই ফন্টগুলো সেই রকম, উদাহরণস্বরূপ, মাইক্রোসফট্ ওয়ার্ড/এই ফন্টগুলো একি রকম যেমন অন্য প্রোগ্রামগুলো ব্যবহার করে, উদাহরণস্বরূপ, মাইক্রোসফট্ ওয়ার্ড )।  তোমার কম্পিউটারে কোন একটি ফন্ট থাকলে এর অর্থ এর এই নয় যে সেই ফন্ট যারা তোমার ওয়েব সাইট ভিজিট করবে তাদের কম্পিউটারেও থাকবে।</p> 
+
+<p>এইখানে আরো একটি সমস্যা আছে যা আমার এতক্ষণ খুজে পায়নি: <code>@font-face</code> এটি একটা ছোট্ট কোড যা তোমার ফন্ট ফাইলকে তোমার ওয়েব পেজের সাথে যুক্ত করার অনুমোদন দেয়, কাজেই তোমার ব্যবহৃত ফন্টটি ব্যবহারকারীর কম্পিউটারে না থাকলেও চলবে: এটা তোমার ওয়েবপেজ ফাইলের সাথে ডাউনলোড হবে। Now, implementing this yourself is a bit beyond the scope of this course,আমরা এখন আমাদের বেশীরভাগ কাজ করার জন্য একটি সাধারণ অনলাইন সার্ভিস ব্যবহার করব: <a href="http://www.google.com/fonts">Google Fonts</a>. চলো তাহলে এটা করি!</p>
+
+<ol>
+  <li>তোমার প্রজেক্ট একটি ট্যাবে ওপেন করো এবং অন্য ট্যাবে গুগুল ফন্টস।</li> 
+  <li><p>গুগুলফন্টসের পেজে তুমি ফন্টের তালিকা দেখতে পাবে এবং তুমি অপশনও ঠিক করতে পারবে।</p>
+      <img src="images/7a.png" alt="The Google fonts website">
+  </li>
+  <li>ফন্ট তালিকা দেখ এবং তা থেকে দু-তিনটি ফন্ট পছন্দ করো যা তুমি তোমার প্রজেক্টে ব্যবহার করবে। প্রত্যেকটির জন্য <em>Add to collection</em> বাটনে ক্লিক করো।</li>
+  <li>তোমার পছন্দ করা হয়ে গেলে পেজের নিচের দিকে <em>Use</em> বাটনটিতে ক্লিক করো।</li>
+  <li>Now you are given the code you need to get your font choices onto your page. First of all, you need to made the fonts available on your page, using the line of code seen in step 3 of the <em>Use</em> panel into your page. Copy this line now.</li>
+  <pre><code class="language-markup">&lt;link href='http://fonts.googleapis.com/css?family=Alegreya+Sans'
+      rel='stylesheet' type='text/css'&gt;</code></pre>
+  <li> এই লাইনটি তোমার ওপেনিং <code>&lt;style&gt;</code>ট্যাগের উপরে পেষ্ট করো। এই লাইনটি তোমার সিএসএস ফাইলের উপরে থাকা জরুরি। কারণ, কোন ফন্ট ওয়েবপেজে ব্যবহার করার আগে তা ওয়েবপেজে সংযুক্ত থাকতে হবে(এইচটিএমএল কোডগুলো শুরু থেকে শেষের দিকে এইভাবে রান হয়)।</li>
+  <li>Now take the lines shown in step 4 on the Google Fonts page and put them on the elements you want your fonts applied to. If you want to use a font as your base or sitewide font, you would do this:</li>
+      <pre><code class="language-css">html {
+  font-family: 'Alegreya Sans', sans-serif;
+}</code></pre> 
+  <li>ফন্ট আরো নিদিষ্টভাবে ব্যবহার করতে চাইলে, তুমি নিচের মত কোড লিখ: 
+  </li>
+  <pre><code class="language-css">h1 {
+  font-family: 'Alegreya Sans', sans-serif;
+}</code></pre>
+</ol>
+
+<p>ফন্ট সম্পর্কে এই কোর্সে আলোচনা এখানেই শেষ! তুমি ফন্ট সম্পর্কে 	আরো বিস্তারিত জানতে পারবে <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font">MDN font page</a> এবং <a href="http://www.sitepoint.com/how-to-use-cross-browser-web-fonts-part-1/">Cross browser web fonts part 1</a>এই ওযেব সাইট দুটি থেকে।</p>
+
+    <h2>ব্যাকগ্রাউন্ড</h2>
+
+    <p>সংক্ষেপে আমার ফন্ট সম্পর্কে জেনেছি, এখন সময় হয়েছে সিএসএস ব্যকগ্রাউন্ড সম্পর্কে জানার। আমরা এর আগে ব্যকগ্রাউন্ড প্রোপ্রাটির  খুব সাধারণ একটা অংশ: <code>background-color</code> দেখেছি, যেটি আমাদের কোন একটি এলিমেন্টের ব্যকগ্রাউন্ডের জন্য একটি কালার নিদিষ্ট করে দিতে দেয়। তাহলে চলো এখন আমরা ব্যবগ্রাউন্ড প্রোপ্রাটির অনান্য অপশনগুলো দেখি।</p>
+
+    <h3>ব্যকগ্রাউন্ড ইমেজ</h3>
+
+    <p>আমরা আগেই <code>&lt;img&gt;</code> এলিমেন্টের মাধ্যমে আমাদের পেজে ইমেজ যুক্ত করেছি । সিএসএস এর <code>background-image</code> প্রোপ্রাটি দিয়েও  আমরা আমাদের পেজে ইমেজ যুক্ত করতে পারি।  নিচের মত কোড লিখো।</p>
+
+    <pre><code class="language-css">p {
+  background-image: url(http://www.location/of/my/image.png);
+}</code></pre>
+
+    <p>তুমি পেজে ইমেজ দেখতে পাবে যেমনটি আমরা চুতুর্থ সপ্তাহে দেখিছিলাম। উপরের প্রোপ্রাটিটি তোমার প্রজেক্টে ব্যবহার করার চেষ্টা কর। প্রথমে একটি ছবি নির্বাচন করো এবং এটা তোমার পেজের এক বা একাধিক এলিমেন্টের ব্যবগ্রাউন্ড হিসেবে ব্যবহার করো।</p>
+	<!--I am comfused about this Translation, it may wrong-->
+    <p>এখন, তুমি খেয়াল করলে দেখবে যে, এইচটিএমএল এ ইমেজ যেভাবে কাজ করে সেভাবে সিএসএস এ কাজ করে না! 
+	এইচটিএমএল ইমেজ নিজেদের মত করে স্পেস নেয় এব্ং তুমি একটি  <code>img</code> এলিমেন্ট দিয়ে কেবলমাত্র একটি ইমেজ যুক্ত করতে পারবে।	সিএসএস ব্যকগ্রাউন্ড ইমেজ নিজের মত স্পেস নেয় না। তার অন্য এলিমেন্টের ব্যকগ্রাউন্ড হিসেবে অবস্থান করে। এবং তারা ডিফল্ট ভাবে সমস্ত পেজ জুড়ে রিপিট হতে থাকবে ততক্ষণ পর্যন্ত যতক্ষণ না সম্পূর্ণ পেজ ভর্তি না হয়।</p>
+
+    <p>A very common technique is to use a seamless repeating image tile to create a nice looking background. If you search for something like "repeating background tile", you should find many suitable images to do this with. Lets try this now before we move on.</p>
+
+    <h3>ব্যকগ্রাউন্ড রিপিট</h3>
+
+    <p>কিছু কিছু সময় তুমি চাইবে না যে তোমার ব্যাকগ্রাউন্ড ইমেজ রিপিট হোক; তুমি হয়ত চাইবে তোমার  ইমেজ আনুভূমিক বা উল্মব ভাবে রিপিট হোক কিংবা একেইবারেই রিপিট না হোক।সিএসএস <code>background-repeat</code>প্রোপ্রাটি তোমাকে এটা নিয়ন্ত্রণ করার অনুমতি দেয় এবং এই একটি প্রোপ্রাটির জন্য তোমাকে চারটি ভ্যালু দেয়। </p>
+
+    <ul>
+      <li><code>repeat</code>: সাধারণত ডিফল্ট ভ্যালু নিদিষ্ট করে দেওয়া থাকে না। ইমেজ হরিজেন্টালি এবং ভার্টিকালি দুই ভাবেই রিপিট হয়।.</li>
+      <li><code>no-repeat</code>: ইমেজ মোটেই রিপিট হয় না। শুধুমাত্র একবার দেখে দেখায়।</li>
+      <li><code>repeat-x</code>: ইমেজ শুধুমাত্র হরিজেন্টালি রিপিট হয়, কিন্তু ভার্টিকালি রিপিট হয়না।</li>
+      <li><code>repeat-y</code>: ইমেজ শুধুমাত্র ভার্টিকালি রিপিট হয়, হরিজেন্টালি রিপিট হয় না।</li>
+    </ul>
+
+    <h3>ব্যাকগ্রাউন্ড পজিশন</h3>
+
+    <p>আরেকটি ব্যাপার, তুমি যখন কোন ইমেজকে  শুধুমাত্র একবার তোমার পেজে দেখাবে তখন সেটা ডিফল্টভাবে পেজের বামদিকে উপরেরে কর্ণারে থাকবে। কিন্তু চিন্তার কোন কারণ নেই! তুমি  <code>background-position</code> প্রোপ্রাটি ব্যবহার করে এর এটিকে ইচ্ছামত স্থানে স্থাপন করতে পারো। এটা কযেক ধরণের ভিন্ন ভিন্ন ভ্যালু গ্রহণ করে, এবং সাধারণত এটার জন্য তোমাকে দুইটি ভ্যালু দিতে হবে: একটা  হরিজেন্টাল ভ্যালু এবং আরেকটা ভার্টিকাল ভ্যালু। </p>
+
+    <ol>
+      <li>শুরু করার জন্য তুমি কিওয়ার্ড ভ্যালু ব্যবহার করতে পারো , যেগুলো তোমার ইমেজকে নিদিষ্ট জাযগায় স্থাপন করবে; হরিজেন্টাল ভ্যালু হিসেবে  <code>left</code>, <code>center</code> অথবা <code>right</code>, এবং ভার্টিকাল ভ্যালু হিসেবে <code>top</code>, <code>center</code> অথবা <code>bottom</code>ব্যবহার করতে পারো। উদাহরণস্বরূপঃ, কোন ইমেজকে কোন এলিমেন্টের ডানদিকের সর্ব উপরে রাখতে চাইলে, তুমি এটা ব্যবহার করতে পারোঃ <code>background-position: right bottom;</code>.</li>
+      <li>দ্বিতীয়ত, তুমি <a href="http://docs.webplatform.org/wiki/css/data_types/length">CSS length units</a> ব্যবহার করতে পারো, যেটা তোমাকে আরো নিদিষ্ট ভাবে ইমেজের পজিশনিং করার ক্ষমতা দিবে। উদাহরণস্বরূপঃ, তুমি  পিক্সেল ভ্যালু । এটি  তোমার ইমেজকে বাম দিকের সর্ব উপর থেকে নিদিষ্ট পিক্সেল দূরে স্থাপন করতে দিবে (উদারণ, <code>background-position: 100px 200px;</code>), অথবা, percentages to put the image a percentage of the element's width and height across and down from the top left corner ((e.g. <code>background-position: 50% 30%;</code>))</li>
+      <li>তুমি কিওয়ার্ড এবং সিএসএস লেনথ ইউনিট একসাথেও ব্যবহার করতে পারো, উদাহরণস্বরূপঃ <code>background-position: 100px bottom;</code></li>
+    </ol>
+
+    <h3>অ্যাডভান্সড: শর্টহ্যান্ড</h3>
+
+    <p>কিছুক্ষণ আগে তুমি <code>border</code> এবং <code>padding</code> এর মত প্রোপ্রাটি দেখেছ, তুমি চাইলে বিভিন্ন ধরণের ব্যকগ্রাউন্ড প্রোপ্রাটিগুলোর বদলে শর্টহ্যান্ড ভ্যালু ব্যবহার করতে পারো। এর জন্য কেবল <code>background-*</code> প্রোপ্রাটির বদলে <code>background</code> প্রোপ্রাটি লিখলেই হবে।</p>
+
+ <pre><code class="language-css">background-color: red;
+background-image: url(http://www.clker.com/cliparts/v/R/d/R/l/c/
+                      decorative-corner-design-md.png);
+background-repeat: no-repeat;
+background-position: right top;</code></pre>
+
+ <p>তুমি শুধু এটা লিখতে পারো:</p>
+
+<pre><code class="language-css">background: red url(http://www.clker.com/cliparts/v/R/d/R/l/c/
+                    decorative-corner-design-md.png)
+                    no-repeat right top;</code></pre>
+
+    <h2>ADVANCED: Drop shadows</h2>
+
+    <p>CSS provides a mechanism to put drop shadows on your text and boxes. This is a bit more tricky to work out, but can create some fun effects.</p>
+
+    <li><code>text-shadow</code>: This allows you to put a funky drop shadow on the text of your element, for example <code>text-shadow: 2px 2px 5px black;</code>. The four items in the value are:
+      <ol>
+        <li>The horizontal offset of the shadow from the original text (how far it moves over to the right.)</li>
+        <li>The vertical offset of the shadow from the original text (how far it moves toward the bottom.)</li>
+        <li>The blur radius of the shadow. This means how blurry it is; a bigger number will give more blur, while 1px will give a solid shadow (no blur.)</li>
+        <li>The base colour of the shadow.</li>
+      </ol>
+    </li>
+    <li><code>box-shadow</code>: This allows you to put a funky drop shadow on the your whole element, for example <code>box-shadow: 2px 2px 5px black;</code>. The four items in the value are:
+      <ol>
+        <li>The horizontal offset of the shadow from the original box (how far it moves over to the right.)</li>
+        <li>The vertical offset of the shadow from the original box (how far it moves toward the bottom.)</li>
+        <li>The blur radius of the shadow. This means how blurry it is; a bigger number will give more blur, while 1px will give a solid shadow (no blur.)</li>
+        <li>The base colour of the shadow.</li>
+      </ol>
+    </li>
+  </main>	
+
+
+<nav>
+  <p>Previous:<br><a href="lesson6.html">How CSS works</a></p>
+  <p><a href="index.html">Main index</a></p>
+  <p>Next:<br><a href="lesson8.html">CSS layout</a></p>
+</nav>
+
+<hr>
+<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Share it, make it better, use it for good.</p>
+
+</body>
+  <script src="prism/prism.js"></script>
+</html>
